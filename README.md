@@ -77,7 +77,7 @@ To register your theme in the system, in your theme directory add a registration
 
 #### Configure images
 Product image sizes and other properties used on the storefront are configured in a view.xml configuration file. It is required for a theme, but is optional if exists in the parent theme.
-If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add view.xml
+If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add `view.xml`
 
 1. Create the `etc` directory in your theme folder
 2. Copy `view.xml` from the etc directory of an existing theme to your theme’s `etc` directory.
@@ -127,7 +127,7 @@ app/design/frontend/<Vendor>/
 │   ├── composer.json
 ```
 
-:exclamation: _Copy the less files from the parent theme and paste into your theme. And create in you theme `Magento_Theme => web => css => source => _module.less` directories and less file and copy styles for parent theme_
+:exclamation: _Copy the less files from the parent theme and paste into your theme. And create in you theme `Magento_Theme => web => css => source => _module.less` directories and less file and copy styles for parent theme._
 
 ### 6. Theme registration
 Once you open the Magento Admin (or reload any Magento Admin page) having added the theme files to the files system, 
@@ -146,7 +146,7 @@ cd <your_Magento_instance_directory>
 npm install
 npm update
 ```
-4. Add your theme to Grunt configuration. To do this, in the dev/tools/grunt/configs/themes.js file, add your theme to module.exports like following:
+4. Add your theme to Grunt configuration. To do this, in the `dev/tools/grunt/configs/themes.js` file, add your theme to module.exports like following:
 ```
 module.exports = {
     ...
@@ -165,10 +165,10 @@ module.exports = {
 5. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension](http://livereload.com/extensions/) in your browser.
 
 ### Grunt commands:
-* `grunt clean:<theme>`
-* `grunt exec:<theme>`
-* `grunt less:<theme>`
-* `grunt watch`
+* `grunt clean:<theme>` Removes the theme related static files in the `pub/static` and `var` directories.
+* `grunt exec:<theme>` Republishes symlinks to the source files to the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory.
+* `grunt less:<theme>` Compiles .css files using the symlinks published in the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory
+* `grunt watch` Tracks the changes in the source files, recompiles `.css` files
 
 ## Compile LESS with Gulp
 <table>
@@ -180,10 +180,110 @@ module.exports = {
 ### Installation
 1. Download as a zip file or clone [this](https://github.com/subodha/magento-2-gulp).
 2. Copy `gulpfile.js` and `package.json` in to the root directory
-3. Install gulp globaly using `npm install -g gulp-cli`
+3. Install gulp globaly and localy using `npm install -g gulp-cli`
 4. Install modules: run a command in a root directory of your project `npm install`.
-5. Compilation: `gulp less --<theme> --live(with live reload)`
-6. Watcher: `gulp watch --luma --live(with live reload)`
+5. Compilation: `gulp less --<theme> --live (with live reload)`
+6. Watcher: `gulp watch --<theme> --live (with live reload)`
 7. For using [liveReload](http://livereload.com/) install extension for your browser
 
 :exclamation: _Don't remove grunt modules (You must use `gunt exec:<theme>` command for republishes symlinks to the source files)_
+
+## Create custom js and including third-party library
+
+### Create `theme.js`
+1. Create `theme.js` within the theme directory `<theme>/web/js/theme.js` with this content:
+```
+define([
+  "jquery"
+], 
+function($) {
+  "use strict";
+
+  // Here your custom code...
+
+});
+```
+2. Declare `theme.js` with a `requirejs-config.js` file
+Create a `requirejs-config.js` file within the theme directory: `<theme>/requirejs-config.js` with this content:
+```
+var config = {
+
+  // When load 'requirejs' always load the following files also
+  deps: [
+    "js/theme"
+  ]
+
+};
+```
+`js/theme` is the path to our custom `theme.js`. The `.js` extension is not required.
+
+Custom `requirejs-config.js` will be merged with other `requirejs-config.js` defined in Magento.
+
+RequireJS will load our `theme.js` file, on each page, resolving dependencies and loading files in an async way.
+
+### Optional: Including third-party library
+1. Add the library in `web/js`: `<theme>/web/js/vendor/jquery/library.js`
+2. Open `requirejs-config.js` and add this content:
+```
+var config = {
+
+  deps: [
+    "js/theme"
+  ],
+
+  // Paths defines associations from library name (used to include the library,
+  // for example when using "define") and the library file path.
+  paths: {
+    'library': 'js/vendor/jquery/library',
+  },
+
+  // Shim: when you're loading your dependencies, requirejs loads them all
+  // concurrently. You need to set up a shim to tell requirejs that the library
+  // (e.g. a jQuery plugin) depends on another already being loaded (e.g. depends
+  // from jQuery).
+  // Exports: if the library it's not AMD aware, you need to tell requirejs what 
+  // to look to know the script loaded correctly. You can do this with an 
+  // "exports" entry in your shim. The value must be a variable defined within
+  // the library.
+  shim: {
+    'library': {
+      deps: ['jquery'],
+      exports: 'jQuery.fn.library',
+    }
+  }
+
+};
+```
+3. Add the dependency within `theme.js`:
+```
+define([
+  'jquery',
+  'library'
+], 
+function($) {
+
+  // ...
+
+});
+```
+
+#### Your theme directory structure now
+```
+app/design/<area>/<Vendor>/<theme>/
+├── web/
+│ ├── css/
+│ │ ├── source/ 
+│ ├── fonts/
+│ ├── images/
+│ ├── js/
+│ │ ├── theme.js
+│ │ ├── vendor/
+│ │ │ ├── jquery/
+│ │ │ │ ├── library.js
+```
+
+## Resources:
+* [Create a new storefront theme](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/themes/theme-create.html)
+* [Compile LESS with Grunt](http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html)
+* [Compile LESS with Gulp](https://github.com/subodha/magento-2-gulp)
+* [Create cusom js and include third-party library](http://devdocs.magento.com/guides/v2.0/javascript-dev-guide/javascript/js-resources.html)
