@@ -126,9 +126,11 @@ app/design/frontend/<Vendor>/
 │   ├── theme.xml
 │   ├── composer.json
 ```
-
+**Note**
+<kbd>
 :exclamation: _Copy the less files from the parent theme and paste into your theme. And create in you theme `Magento_Theme => web => css => source => _module.less` directories and less file and copy styles for parent theme._
-
+</kbd>
+     
 ### 6. Theme registration
 Once you open the Magento Admin (or reload any Magento Admin page) having added the theme files to the files system, 
 your theme gets registered and added to the database. 
