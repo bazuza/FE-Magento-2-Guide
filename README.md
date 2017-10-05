@@ -1,4 +1,4 @@
-![picture alt](https://i.imgur.com/K44huME.png "Title is optional")
+![picture alt](https://raw.githubusercontent.com/bazuza/FE-Magento-2-Guide/master/logo-m2-fe.png "Front End Magento 2")
 
 # FE Magento 2 Guide 
 This document provides instructions for creating and installing custom storefront themes for a Magento application.
