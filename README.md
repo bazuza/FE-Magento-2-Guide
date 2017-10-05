@@ -1,12 +1,11 @@
 ![picture alt](https://i.imgur.com/K44huME.png "Title is optional")
 
 # FE Magento 2 Guide 
+![picture alt](https://i.imgur.com/YSdEiMP.jpg "Title is optional")
 
 ### Links:
 1. [Create custom theme](https://github.com/bazuza/FE-Magento-2-Create-theme)
-
 2. [Styles](https://github.com/bazuza/FE-Magento-2-Styles)
-
 3. [Java Script](https://github.com/bazuza/FE-Magento-2-Java-Script)
 
 ## Resources:
