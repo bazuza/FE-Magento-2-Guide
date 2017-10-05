@@ -1,8 +1,10 @@
 # FE Magento 2 Guide 
 
-[Create a storefront theme](#)
-[Styles](#)
-[Java Script](#)
+:link: [Create a storefront theme](#)
+
+:link: [Styles](#)
+
+:link: [Java Script](#)
 
 ## Resources:
 * [Create a new storefront theme](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/themes/theme-create.html)
