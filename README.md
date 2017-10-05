@@ -1,7 +1,7 @@
 ![picture alt](https://i.imgur.com/K44huME.png "Title is optional")
 
 # FE Magento 2 Guide 
-![picture alt](https://i.imgur.com/YSdEiMP.jpg "Title is optional")
+This document provides instructions for creating and installing custom storefront themes for a Magento application.
 
 ## Links:
 1. [Create custom theme](https://github.com/bazuza/FE-Magento-2-Create-theme)
