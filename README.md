@@ -2,6 +2,7 @@
 
 # FE Magento 2 Guide 
 
+## Menu:
 :link: [Create a storefront theme](https://github.com/bazuza/FE-Magento-2-Create-theme)
 
 :link: [Styles](https://github.com/bazuza/FE-Magento-2-Styles)
