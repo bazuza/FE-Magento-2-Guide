@@ -1,6 +1,6 @@
 # FE Magento 2 Guide 
 
-:link: [Create a storefront theme](#)
+:link: [Create a storefront theme](https://github.com/bazuza/FE-Magento-2-Create-theme)
 
 :link: [Styles](#)
 
