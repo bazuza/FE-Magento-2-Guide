@@ -1,7 +1,8 @@
 <link href="https://raw.githubusercontent.com/bazuza/FE-Magento-2-Guide/master/custom-github-markup.css" media="all" rel="stylesheet" />
-<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-bedfc518345498ab3204d330c1727cde7e733526a09cd7df6867f6a231565091.css" integrity="sha256-vt/FGDRUmKsyBNMwwXJ83n5zNSagnNffaGf2ojFWUJE=" media="all" rel="stylesheet">
+<link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-bedfc518345498ab3204d330c1727cde7e733526a09cd7df6867f6a231565091.css" integrity="sha256-vt/FGDRUmKsyBNMwwXJ83n5zNSagnNffaGf2ojFWUJE=" media="all" rel="stylesheet" />
 
-<link crossorigin="anonymous" href="https://raw.githubusercontent.com/bazuza/FE-Magento-2-Guide/master/custom-github-markup.css" integrity="sha256-vt/FGDRUmKsyBNMwwXJ83n5zNSagnNffaGf2ojFWUJE=" media="all" rel="stylesheet">
+<link crossorigin="anonymous" href="https://raw.githubusercontent.com/bazuza/FE-Magento-2-Guide/master/custom-github-markup.css" integrity="sha256-vt/FGDRUmKsyBNMwwXJ83n5zNSagnNffaGf2ojFWUJE=" media="all" rel="stylesheet" />
+
 ![picture alt](https://raw.githubusercontent.com/bazuza/FE-Magento-2-Guide/master/logo-m2-fe.png "Front End Magento 2")
 
 # FE Magento 2 Guide 
