@@ -9,7 +9,7 @@
 This document provides instructions for creating and installing custom storefront themes for a Magento application.
 
 ## Links:
-1. [Create custom theme](https://github.com/bazuza/FE-Magento-2-Create-theme)
+1. [Create custom theme](https://github.com/bazuza/FE-Magento-2-Create-theme){: .callout }
 2. [Styles](https://github.com/bazuza/FE-Magento-2-Styles)
 3. [Java Script](https://github.com/bazuza/FE-Magento-2-Java-Script)
 
