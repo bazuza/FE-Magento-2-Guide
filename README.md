@@ -1,4 +1,4 @@
-<link crossorigin="anonymous" href="https://raw.githubusercontent.com/bazuza/FE-Magento-2-Guide/master/custom-github.css" media="all" rel="stylesheet" />
+<link crossorigin="anonymous" href="https://raw.githubusercontent.com/bazuza/FE-Magento-2-Guide/master/custom-murkup-github.css" media="all" rel="stylesheet" />
 
 ![picture alt](https://raw.githubusercontent.com/bazuza/FE-Magento-2-Guide/master/logo-m2-fe.png "Front End Magento 2")
 
