@@ -1,3 +1,4 @@
+"markdown.styles": ["https://github.com/bazuza/FE-Magento-2-Guide/github-markdown.css"]
 ![picture alt](https://raw.githubusercontent.com/bazuza/FE-Magento-2-Guide/master/logo-m2-fe.png "Front End Magento 2")
 
 # FE Magento 2 Guide 
